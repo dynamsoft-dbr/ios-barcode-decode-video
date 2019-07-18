@@ -1,0 +1,409 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1ECD017E215A040C00A915D5 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ECD017D215A040C00A915D5 /* libc++.1.tbd */; };
+		57801F7A2248CEEF00F20A30 /* DynamsoftBarcodeReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57801F792248CEEF00F20A30 /* DynamsoftBarcodeReader.framework */; };
+		57801F7F2249C07400F20A30 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57801F7E2249C07400F20A30 /* NavigationController.m */; };
+		6874ED511CF4FDE7003986EA /* DbrManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6874ED501CF4FDE7003986EA /* DbrManager.m */; };
+		6874ED571CF53600003986EA /* BarcodeTypesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6874ED561CF53600003986EA /* BarcodeTypesTableViewController.m */; };
+		6889A54F1CEED25800A45114 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6889A54E1CEED25800A45114 /* main.m */; };
+		6889A5521CEED25800A45114 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6889A5511CEED25800A45114 /* AppDelegate.m */; };
+		6889A5551CEED25800A45114 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6889A5541CEED25800A45114 /* ViewController.m */; };
+		6889A5581CEED25800A45114 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6889A5561CEED25800A45114 /* Main.storyboard */; };
+		6889A55A1CEED25800A45114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6889A5591CEED25800A45114 /* Assets.xcassets */; };
+		6889A55D1CEED25800A45114 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6889A55B1CEED25800A45114 /* LaunchScreen.storyboard */; };
+		689989AA228C184B00C4CCAA /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 689989A9228C184B00C4CCAA /* 1.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		689AF5F91CF6DFB5008665EC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1ECD017D215A040C00A915D5 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		57801F792248CEEF00F20A30 /* DynamsoftBarcodeReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DynamsoftBarcodeReader.framework; sourceTree = "<group>"; };
+		57801F7D2249C07400F20A30 /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		57801F7E2249C07400F20A30 /* NavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		6874ED4F1CF4FDE7003986EA /* DbrManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbrManager.h; sourceTree = "<group>"; };
+		6874ED501CF4FDE7003986EA /* DbrManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbrManager.m; sourceTree = "<group>"; };
+		6874ED551CF53600003986EA /* BarcodeTypesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarcodeTypesTableViewController.h; sourceTree = "<group>"; };
+		6874ED561CF53600003986EA /* BarcodeTypesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarcodeTypesTableViewController.m; sourceTree = "<group>"; };
+		6889A54A1CEED25700A45114 /* Dbr Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dbr Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6889A54E1CEED25800A45114 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6889A5501CEED25800A45114 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6889A5511CEED25800A45114 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6889A5531CEED25800A45114 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6889A5541CEED25800A45114 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6889A5571CEED25800A45114 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6889A5591CEED25800A45114 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6889A55C1CEED25800A45114 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6889A55E1CEED25800A45114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		689989A9228C184B00C4CCAA /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6889A5471CEED25700A45114 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57801F7A2248CEEF00F20A30 /* DynamsoftBarcodeReader.framework in Frameworks */,
+				1ECD017E215A040C00A915D5 /* libc++.1.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6889A5411CEED25700A45114 = {
+			isa = PBXGroup;
+			children = (
+				6889A54C1CEED25800A45114 /* DynamsoftBarcodeReaderDemo */,
+				6889A54B1CEED25700A45114 /* Products */,
+				68BA8B7020E20BD100A2737D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6889A54B1CEED25700A45114 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6889A54A1CEED25700A45114 /* Dbr Demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6889A54C1CEED25800A45114 /* DynamsoftBarcodeReaderDemo */ = {
+			isa = PBXGroup;
+			children = (
+				6889A5501CEED25800A45114 /* AppDelegate.h */,
+				6889A5511CEED25800A45114 /* AppDelegate.m */,
+				6874ED551CF53600003986EA /* BarcodeTypesTableViewController.h */,
+				6874ED561CF53600003986EA /* BarcodeTypesTableViewController.m */,
+				6874ED4F1CF4FDE7003986EA /* DbrManager.h */,
+				6874ED501CF4FDE7003986EA /* DbrManager.m */,
+				6889A5531CEED25800A45114 /* ViewController.h */,
+				6889A5541CEED25800A45114 /* ViewController.m */,
+				57801F7D2249C07400F20A30 /* NavigationController.h */,
+				57801F7E2249C07400F20A30 /* NavigationController.m */,
+				6889A5561CEED25800A45114 /* Main.storyboard */,
+				6889A5591CEED25800A45114 /* Assets.xcassets */,
+				6889A55B1CEED25800A45114 /* LaunchScreen.storyboard */,
+				6889A55E1CEED25800A45114 /* Info.plist */,
+				6889A54D1CEED25800A45114 /* Supporting Files */,
+			);
+			path = DynamsoftBarcodeReaderDemo;
+			sourceTree = "<group>";
+		};
+		6889A54D1CEED25800A45114 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				689989A9228C184B00C4CCAA /* 1.png */,
+				6889A54E1CEED25800A45114 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		68BA8B7020E20BD100A2737D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57801F792248CEEF00F20A30 /* DynamsoftBarcodeReader.framework */,
+				1ECD017D215A040C00A915D5 /* libc++.1.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6889A5491CEED25700A45114 /* DynamsoftBarcodeReaderDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6889A5611CEED25800A45114 /* Build configuration list for PBXNativeTarget "DynamsoftBarcodeReaderDemo" */;
+			buildPhases = (
+				6889A5461CEED25700A45114 /* Sources */,
+				6889A5471CEED25700A45114 /* Frameworks */,
+				6889A5481CEED25700A45114 /* Resources */,
+				689AF5F91CF6DFB5008665EC /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DynamsoftBarcodeReaderDemo;
+			productName = DynamsoftBarcodeReaderDemo;
+			productReference = 6889A54A1CEED25700A45114 /* Dbr Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6889A5421CEED25700A45114 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = dynamsoft;
+				TargetAttributes = {
+					6889A5491CEED25700A45114 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = W6PESGXW9M;
+					};
+				};
+			};
+			buildConfigurationList = 6889A5451CEED25700A45114 /* Build configuration list for PBXProject "DynamsoftBarcodeReaderDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6889A5411CEED25700A45114;
+			productRefGroup = 6889A54B1CEED25700A45114 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6889A5491CEED25700A45114 /* DynamsoftBarcodeReaderDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6889A5481CEED25700A45114 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6889A55D1CEED25800A45114 /* LaunchScreen.storyboard in Resources */,
+				689989AA228C184B00C4CCAA /* 1.png in Resources */,
+				6889A55A1CEED25800A45114 /* Assets.xcassets in Resources */,
+				6889A5581CEED25800A45114 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6889A5461CEED25700A45114 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6889A5551CEED25800A45114 /* ViewController.m in Sources */,
+				6889A5521CEED25800A45114 /* AppDelegate.m in Sources */,
+				6874ED571CF53600003986EA /* BarcodeTypesTableViewController.m in Sources */,
+				57801F7F2249C07400F20A30 /* NavigationController.m in Sources */,
+				6874ED511CF4FDE7003986EA /* DbrManager.m in Sources */,
+				6889A54F1CEED25800A45114 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6889A5561CEED25800A45114 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6889A5571CEED25800A45114 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6889A55B1CEED25800A45114 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6889A55C1CEED25800A45114 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6889A55F1CEED25800A45114 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6889A5601CEED25800A45114 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6889A5621CEED25800A45114 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = W6PESGXW9M;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DynamsoftBarcodeReaderDemo",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = DynamsoftBarcodeReaderDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dynamsoft.DbrDemo;
+				PRODUCT_NAME = "Dbr Demo";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "arm64 armv7 i386 x86_64";
+			};
+			name = Debug;
+		};
+		6889A5631CEED25800A45114 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = W6PESGXW9M;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DynamsoftBarcodeReaderDemo",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = DynamsoftBarcodeReaderDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dynamsoft.DbrDemo;
+				PRODUCT_NAME = "Dbr Demo";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "arm64 armv7 i386 x86_64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6889A5451CEED25700A45114 /* Build configuration list for PBXProject "DynamsoftBarcodeReaderDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6889A55F1CEED25800A45114 /* Debug */,
+				6889A5601CEED25800A45114 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6889A5611CEED25800A45114 /* Build configuration list for PBXNativeTarget "DynamsoftBarcodeReaderDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6889A5621CEED25800A45114 /* Debug */,
+				6889A5631CEED25800A45114 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6889A5421CEED25700A45114 /* Project object */;
+}
