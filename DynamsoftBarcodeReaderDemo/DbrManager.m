@@ -30,7 +30,7 @@
     m_videoCaptureSession = nil;
     isPauseFramesComing = NO;
     isCurrentFrameDecodeFinished = YES;
-    _barcodeFormat = EnumBarcodeFormatONED | EnumBarcodeFormatPDF417 | EnumBarcodeFormatQRCODE |EnumBarcodeFormatDATAMATRIX;
+    _barcodeFormat = EnumBarcodeFormatALL;
     startRecognitionDate = nil;
     ciContext = [[CIContext alloc] init];
     m_recognitionReceiver = nil;
@@ -102,6 +102,8 @@
     _barcodeFormat = barcodeFormat;
     iPublicRuntimeSettings* settings = [m_barcodeReader getRuntimeSettings:nil];
     settings.barcodeFormatIds = barcodeFormat;
+    [m_barcodeReader StopFrameDecoding:nil];
+    width = 0;
     [m_barcodeReader updateRuntimeSettings:settings error:nil];
 }
 
@@ -184,6 +186,10 @@
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection;
 {
+    
+    if (isPauseFramesComing) {
+        return;
+    }
     isCurrentFrameDecodeFinished = NO;
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     CVPixelBufferLockBaseAddress(imageBuffer, kCVPixelBufferLock_ReadOnly);
