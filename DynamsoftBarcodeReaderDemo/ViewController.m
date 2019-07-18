@@ -208,6 +208,7 @@ static NSString * const kLicensekey = @"Put your license key here";
             destViewController.mainView = self;
         [self turnFlashOn:NO];
         dbrManager.isPauseFramesComing = YES;
+        [resultLabel setText:@""];
     }
 }
 
@@ -264,7 +265,9 @@ static NSString * const kLicensekey = @"Put your license key here";
                              [self barcodeTypeStringValue:[readResult[i] barcodeFormat]], [readResult[i] barcodeText]];
         msg = [msg stringByAppendingString:msgText];
     }
-    [resultLabel setText:msg];
+    if (!dbrManager.isPauseFramesComing) {
+        [resultLabel setText:msg];
+    }
 }
 
 // callback
