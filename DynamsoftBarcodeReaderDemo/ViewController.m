@@ -262,7 +262,7 @@ static NSString * const kLicensekey = @"Put your license key here";
     NSString* msg = @"";
     for (int i = 0; i < readResult.count; i++) {
         NSString* msgText = [NSString stringWithFormat:@"Type: %@ Value: %@\n",
-                             [self barcodeTypeStringValue:[readResult[i] barcodeFormat]], [readResult[i] barcodeText]];
+                             [readResult[i] barcodeFormatString], [readResult[i] barcodeText]];
         msg = [msg stringByAppendingString:msgText];
     }
     if (!dbrManager.isPauseFramesComing) {
@@ -405,43 +405,6 @@ static NSString * const kLicensekey = @"Put your license key here";
     [resultLabel setLineBreakMode:UILineBreakModeWordWrap];
     resultLabel.numberOfLines = 0;
     return;
-}
-
-#pragma mark - Addition explaination
-
-- (NSString*)barcodeTypeStringValue:(EnumBarcodeFormat)type {
-    switch (type) {
-        case EnumBarcodeFormatCODE39:
-            return @"CODE 39";
-        case EnumBarcodeFormatCODE128:
-            return @"CODE 128";
-        case EnumBarcodeFormatCODE93:
-            return @"CODE 93";
-        case EnumBarcodeFormatCODABAR:
-            return @"CODABAR";
-        case EnumBarcodeFormatITF:
-            return @"ITF";
-        case EnumBarcodeFormatEAN13:
-            return @"EAN-13";
-        case EnumBarcodeFormatEAN8:
-            return @"EAN-8";
-        case EnumBarcodeFormatUPCA:
-            return @"UPC-A";
-        case EnumBarcodeFormatUPCE:
-            return @"UPC-E";
-        case EnumBarcodeFormatINDUSTRIAL:
-            return @"INDUSTRIAL";
-        case EnumBarcodeFormatPDF417:
-            return @"PDF417";
-        case EnumBarcodeFormatQRCODE:
-            return @"QRCODE";
-        case EnumBarcodeFormatDATAMATRIX:
-            return @"DataMatrix";
-        case EnumBarcodeFormatAZTEC:
-            return @"AZTEC";
-        default:
-            return @"Unknown code";
-    }
 }
 
 @end
