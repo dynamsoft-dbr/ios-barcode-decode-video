@@ -30,7 +30,7 @@
     m_videoCaptureSession = nil;
     isPauseFramesComing = NO;
     isCurrentFrameDecodeFinished = YES;
-    _barcodeFormat = EnumBarcodeFormatALL;
+    _barcodeFormat = EnumBarcodeFormatONED | EnumBarcodeFormatPDF417 | EnumBarcodeFormatQRCODE | EnumBarcodeFormatDATAMATRIX;
     startRecognitionDate = nil;
     ciContext = [[CIContext alloc] init];
     m_recognitionReceiver = nil;
@@ -59,7 +59,19 @@
     
     if(self)
     {
+        NSError __autoreleasing * _Nullable error;
         m_barcodeReader = [[DynamsoftBarcodeReader alloc] initWithLicense:license];
+        //Best Coverage settings
+        //[m_barcodeReader initRuntimeSettingsWithString:@"{\"ImageParameter\":{\"Name\":\"BestCoverage\",\"DeblurLevel\":9,\"ExpectedBarcodesCount\":512,\"ScaleDownThreshold\":100000,\"LocalizationModes\":[{\"Mode\":\"LM_CONNECTED_BLOCKS\"},{\"Mode\":\"LM_SCAN_DIRECTLY\"},{\"Mode\":\"LM_STATISTICS\"},{\"Mode\":\"LM_LINES\"},{\"Mode\":\"LM_STATISTICS_MARKS\"}],\"GrayscaleTransformationModes\":[{\"Mode\":\"GTM_ORIGINAL\"},{\"Mode\":\"GTM_INVERTED\"}]}}" conflictMode:EnumConflictModeOverwrite error:&error];
+        //Best Speed settings
+        //[m_barcodeReader initRuntimeSettingsWithString:@"{\"ImageParameter\":{\"Name\":\"BestSpeed\",\"DeblurLevel\":3,\"ExpectedBarcodesCount\":512,\"LocalizationModes\":[{\"Mode\":\"LM_SCAN_DIRECTLY\"}],\"TextFilterModes\":[{\"MinImageDimension\":262144,\"Mode\":\"TFM_GENERAL_CONTOUR\"}]}}" conflictMode:EnumConflictModeOverwrite error:&error];
+        //balance settings
+        [m_barcodeReader initRuntimeSettingsWithString:@"{\"ImageParameter\":{\"Name\":\"Balance\",\"DeblurLevel\":5,\"ExpectedBarcodesCount\":512,\"LocalizationModes\":[{\"Mode\":\"LM_CONNECTED_BLOCKS\"},{\"Mode\":\"LM_STATISTICS\"}]}}" conflictMode:EnumConflictModeOverwrite error:&error];
+        
+        iPublicRuntimeSettings* settings = [m_barcodeReader getRuntimeSettings:nil];
+        settings.barcodeFormatIds = EnumBarcodeFormatONED | EnumBarcodeFormatPDF417 | EnumBarcodeFormatQRCODE | EnumBarcodeFormatDATAMATRIX;
+        
+        [m_barcodeReader updateRuntimeSettings:settings error:nil];
         [self MemberInitialize];
     }
     
@@ -72,7 +84,7 @@
 
 - (void)dealloc
 {
-    [m_barcodeReader StopFrameDecoding:nil];
+    [m_barcodeReader stopFrameDecoding:nil];
     m_barcodeReader = nil;
     if(m_videoCaptureSession != nil)
     {
@@ -102,7 +114,7 @@
     _barcodeFormat = barcodeFormat;
     iPublicRuntimeSettings* settings = [m_barcodeReader getRuntimeSettings:nil];
     settings.barcodeFormatIds = barcodeFormat;
-    [m_barcodeReader StopFrameDecoding:nil];
+    [m_barcodeReader stopFrameDecoding:nil];
     width = 0;
     [m_barcodeReader updateRuntimeSettings:settings error:nil];
 }

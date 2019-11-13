@@ -16,6 +16,12 @@
 @synthesize pdf417Cell;
 @synthesize datamatrixCell;
 @synthesize aztecCell;
+@synthesize databarCell;
+@synthesize patchcodeCell;
+@synthesize maxicodeCell;
+@synthesize microqrCell;
+@synthesize micropdf417Cell;
+@synthesize gs1compositeCell;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,6 +51,12 @@
     [pdf417Cell setSelectedBackgroundView:bgColorView];
     [datamatrixCell setSelectedBackgroundView:bgColorView];
     [aztecCell setSelectedBackgroundView:bgColorView];
+    [databarCell setSelectedBackgroundView:bgColorView];
+    [patchcodeCell setSelectedBackgroundView:bgColorView];
+    [maxicodeCell setSelectedBackgroundView:bgColorView];
+    [microqrCell setSelectedBackgroundView:bgColorView];
+    [micropdf417Cell setSelectedBackgroundView:bgColorView];
+    [gs1compositeCell setSelectedBackgroundView:bgColorView];
 }
 
 - (void)selectCells{
@@ -80,6 +92,42 @@
         [barcodeTypesTableView selectRowAtIndexPath:indexPath animated:NO  scrollPosition:UITableViewScrollPositionBottom];
     }
     
+    if((types | EnumBarcodeFormatGS1DATABAR) == types)
+    {
+        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:5 inSection:0];
+        [barcodeTypesTableView selectRowAtIndexPath:indexPath animated:NO  scrollPosition:UITableViewScrollPositionBottom];
+    }
+    
+    if((types | EnumBarcodeFormatPATCHCODE) == types)
+    {
+        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:6 inSection:0];
+        [barcodeTypesTableView selectRowAtIndexPath:indexPath animated:NO  scrollPosition:UITableViewScrollPositionBottom];
+    }
+    
+    if((types | EnumBarcodeFormatMAXICODE) == types)
+    {
+        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:7 inSection:0];
+        [barcodeTypesTableView selectRowAtIndexPath:indexPath animated:NO  scrollPosition:UITableViewScrollPositionBottom];
+    }
+    
+    if((types | EnumBarcodeFormatMICROQR) == types)
+    {
+        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:8 inSection:0];
+        [barcodeTypesTableView selectRowAtIndexPath:indexPath animated:NO  scrollPosition:UITableViewScrollPositionBottom];
+    }
+    
+    if((types | EnumBarcodeFormatMICROPDF417) == types)
+    {
+        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:9 inSection:0];
+        [barcodeTypesTableView selectRowAtIndexPath:indexPath animated:NO  scrollPosition:UITableViewScrollPositionBottom];
+    }
+    
+    if((types | EnumBarcodeFormatGS1COMPOSITE) == types)
+    {
+        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:10 inSection:0];
+        [barcodeTypesTableView selectRowAtIndexPath:indexPath animated:NO  scrollPosition:UITableViewScrollPositionBottom];
+    }
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -88,7 +136,7 @@
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     //where indexPath.row is the selected cell
-    BOOL hasCellSelected = linearCell.selected || qrcodeCell.selected || pdf417Cell.selected || datamatrixCell.selected || aztecCell.selected;
+    BOOL hasCellSelected = linearCell.selected || qrcodeCell.selected || pdf417Cell.selected || datamatrixCell.selected || aztecCell.selected || databarCell.selected || patchcodeCell.selected || maxicodeCell.selected || microqrCell.selected || micropdf417Cell.selected || gs1compositeCell.selected;
     
     if(hasCellSelected == NO)
         [barcodeTypesTableView selectRowAtIndexPath:indexPath animated:NO  scrollPosition:UITableViewScrollPositionBottom];
@@ -117,9 +165,23 @@
             types |= EnumBarcodeFormatDATAMATRIX;
         if(aztecCell.selected)
             types |= EnumBarcodeFormatAZTEC;
-        
-        if(mainView != nil && mainView.dbrManager != nil)
-            mainView.dbrManager.barcodeFormat = types;
+        if(databarCell.selected)
+            types |= EnumBarcodeFormatGS1DATABAR;
+        if(patchcodeCell.selected)
+            types |= EnumBarcodeFormatPATCHCODE;
+        if(maxicodeCell.selected)
+            types |= EnumBarcodeFormatMAXICODE;
+        if(microqrCell.selected)
+            types |= EnumBarcodeFormatMICROQR;
+        if(micropdf417Cell.selected)
+            types |= EnumBarcodeFormatMICROPDF417;
+        if(gs1compositeCell.selected)
+            types |= EnumBarcodeFormatGS1COMPOSITE;
+        long allDataBarTypeInvert = ~EnumBarcodeFormatALL;
+        if(mainView != nil && mainView.dbrManager != nil){
+            [mainView.dbrManager setBarcodeFormat:(mainView.dbrManager.barcodeFormat & allDataBarTypeInvert)];
+            [mainView.dbrManager setBarcodeFormat:(mainView.dbrManager.barcodeFormat | types)];
+        }
     }
     [super viewWillDisappear:animated];
 }

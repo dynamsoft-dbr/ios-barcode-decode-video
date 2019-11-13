@@ -5,7 +5,7 @@
 #import <DynamsoftBarcodeReader/DynamsoftBarcodeSDK.h>
 
 //you can init DynamsoftBarcodeReader with a license or licenseKey
-static NSString * const kLicense = @"t0070QQAAALEInnspNfxcNOP4yFRcEtSPS3PcT3MU6KFOAieJJByhAB5LL4PniZCqrdvT/qtsO8Bswie4t1MPe1HL7r0+9aYQPA==";
+static NSString * const kLicense = @"t0068MgAAAJQNnoyRMnBZ7/9DN0q5yMoAlhSCOItnwxsKreVuuQ03spSb+0UQdDWT7X4tFOEQqApPVaxMRSmiV3cfGONPOac=";
 static NSString * const kLicensekey = @"Put your license key here";
 
 @interface ViewController ()
@@ -38,7 +38,6 @@ static NSString * const kLicensekey = @"Put your license key here";
                                              selector:@selector(didBecomeActive:)
                                                  name:UIApplicationDidBecomeActiveNotification
                                                object:nil];
-    UIImage *Image2 = [UIImage imageNamed:@"1"];
     //init DbrManager with Dynamsoft Barcode Reader mobile license
     bool isInitWithLicenseKey = NO;//Choose an initialization method
     if(!isInitWithLicenseKey)
