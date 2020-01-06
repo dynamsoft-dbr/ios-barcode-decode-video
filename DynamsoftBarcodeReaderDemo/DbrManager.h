@@ -8,6 +8,8 @@
 
 @property (nonatomic) long barcodeFormat;
 
+@property (nonatomic) long barcodeFormat2;
+
 @property (strong, nonatomic) NSDate *startRecognitionDate;
 
 @property (strong, nonatomic) NSDate *startVidioStreamDate;
@@ -23,6 +25,8 @@
 -(void)connectServerAfterInit:(NSString*)serverURL LicenseKey:(NSString*)licenseKey;
 
 -(id)initWithLicense:(NSString *)license;
+
+-(void)setBarcodeFormat:(long)barcodeFormat barcodeFormat2:(long)barcodeFormat2;
 
 -(void)setVideoSession;
 

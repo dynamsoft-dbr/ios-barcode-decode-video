@@ -31,6 +31,7 @@
     isPauseFramesComing = NO;
     isCurrentFrameDecodeFinished = YES;
     _barcodeFormat = EnumBarcodeFormatONED | EnumBarcodeFormatPDF417 | EnumBarcodeFormatQRCODE | EnumBarcodeFormatDATAMATRIX;
+    _barcodeFormat2 = EnumBarcodeFormat2NULL;
     startRecognitionDate = nil;
     ciContext = [[CIContext alloc] init];
     m_recognitionReceiver = nil;
@@ -70,7 +71,7 @@
         
         iPublicRuntimeSettings* settings = [m_barcodeReader getRuntimeSettings:nil];
         settings.barcodeFormatIds = EnumBarcodeFormatONED | EnumBarcodeFormatPDF417 | EnumBarcodeFormatQRCODE | EnumBarcodeFormatDATAMATRIX;
-        
+        settings.barcodeFormatIds_2 = EnumBarcodeFormat2NULL;
         [m_barcodeReader updateRuntimeSettings:settings error:nil];
         [self MemberInitialize];
     }
@@ -110,10 +111,12 @@
     }
 }
 
-- (void)setBarcodeFormat:(long)barcodeFormat {
+- (void)setBarcodeFormat:(long)barcodeFormat barcodeFormat2:(long)barcodeFormat2{
     _barcodeFormat = barcodeFormat;
+    _barcodeFormat2 = barcodeFormat2;
     iPublicRuntimeSettings* settings = [m_barcodeReader getRuntimeSettings:nil];
     settings.barcodeFormatIds = barcodeFormat;
+    settings.barcodeFormatIds_2 = barcodeFormat2;
     [m_barcodeReader stopFrameDecoding:nil];
     width = 0;
     [m_barcodeReader updateRuntimeSettings:settings error:nil];
@@ -210,6 +213,7 @@
     CVPixelBufferUnlockBaseAddress(imageBuffer, kCVPixelBufferLock_ReadOnly);
     NSData * buffer = [NSData dataWithBytes:baseAddress length:bufferSize];
     startRecognitionDate = [NSDate date];
+    
     if (width != (int)CVPixelBufferGetWidth(imageBuffer)) {
         width = (int)CVPixelBufferGetWidth(imageBuffer);
         height = (int)CVPixelBufferGetHeight(imageBuffer);
@@ -250,7 +254,7 @@
 
 - (void)errorCallback:(NSInteger)frameId errorCode:(NSInteger)errorCode userData:(NSObject*)userData
 {
-    printf("errorCode %d", errorCode);
+    printf("errorCode %ld", (long)errorCode);
 }
 
 - (void)intermediateResultCallback:(NSInteger)frameId results:(NSArray<iIntermediateResult*>*)results userData: (NSObject*)userData

@@ -20,9 +20,7 @@ static NSString * const kLicensekey = @"Put your license key here";
 
 @synthesize cameraPreview;
 @synthesize previewLayer;
-
 @synthesize rectLayerImage;
-
 @synthesize dbrManager;
 @synthesize flashButton;
 @synthesize detectDescLabel;
@@ -62,8 +60,8 @@ static NSString * const kLicensekey = @"Put your license key here";
     [self configInterface];
 }
 
-
-- (void)viewDidUnload {
+- (void)dealloc
+{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     if(dbrManager != nil)
     {
@@ -253,15 +251,19 @@ static NSString * const kLicensekey = @"Put your license key here";
 
 -(void) onReadImageBufferComplete:(NSArray *) readResult{
     
-    /*if(readResult == nil || dbrManager.isPauseFramesComing == YES)
-    {
-        dbrManager.isCurrentFrameDecodeFinished = YES;
-        return;
-    }*/
+//    if(readResult == nil || dbrManager.isPauseFramesComing == YES)
+//    {
+//        dbrManager.isCurrentFrameDecodeFinished = YES;
+//        return;
+//    }
     NSString* msg = @"";
+    NSString* msgText = @"";
     for (int i = 0; i < readResult.count; i++) {
-        NSString* msgText = [NSString stringWithFormat:@"Type: %@ Value: %@\n",
-                             [readResult[i] barcodeFormatString], [readResult[i] barcodeText]];
+        if (((iTextResult*)readResult[i]).barcodeFormat_2 != 0) {
+            msgText = [NSString stringWithFormat:@"Type: %@ Value: %@\n", [readResult[i] barcodeFormatString_2], [readResult[i] barcodeText]];
+        }else{
+            msgText = [NSString stringWithFormat:@"Type: %@ Value: %@\n", [readResult[i] barcodeFormatString], [readResult[i] barcodeText]];
+        }
         msg = [msg stringByAppendingString:msgText];
     }
     if (!dbrManager.isPauseFramesComing) {
@@ -274,8 +276,6 @@ static NSString * const kLicensekey = @"Put your license key here";
 
     if([keyPath isEqualToString:@"adjustingFocus"]){
         BOOL adjustingFocus =[[change objectForKey:NSKeyValueChangeNewKey] isEqualToNumber:[NSNumber numberWithInt:1]];
-        
-        
         if (adjustingFocus == NO && itrFocusFinish == 0) {
             dbrManager.adjustingFocus = NO;
             itrFocusFinish++;
