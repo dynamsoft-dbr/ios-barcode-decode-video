@@ -5,7 +5,7 @@
 #import <DynamsoftBarcodeReader/DynamsoftBarcodeSDK.h>
 
 //you can init DynamsoftBarcodeReader with a license or licenseKey
-static NSString * const kLicense = @"t0068MgAAAJQNnoyRMnBZ7/9DN0q5yMoAlhSCOItnwxsKreVuuQ03spSb+0UQdDWT7X4tFOEQqApPVaxMRSmiV3cfGONPOac=";
+static NSString * const kLicense = @"Put your license here";
 static NSString * const kLicensekey = @"Put your license key here";
 
 @interface ViewController ()
