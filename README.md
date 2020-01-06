@@ -1,3 +1,3 @@
 # ios-barcode-decode-video
 
-decode video
+DBR updates to 7.3.0.
