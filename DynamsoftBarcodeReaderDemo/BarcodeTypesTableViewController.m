@@ -23,6 +23,7 @@
 @synthesize micropdf417Cell;
 @synthesize gs1compositeCell;
 @synthesize postalCodeCell;
+@synthesize dotCodeCell;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -58,6 +59,7 @@
     [micropdf417Cell setSelectedBackgroundView:bgColorView];
     [gs1compositeCell setSelectedBackgroundView:bgColorView];
     [postalCodeCell setSelectedBackgroundView:bgColorView];
+    [dotCodeCell setSelectedBackgroundView:bgColorView];
 }
 
 - (void)selectCells{
@@ -136,6 +138,11 @@
         [barcodeTypesTableView selectRowAtIndexPath:indexPath animated:NO  scrollPosition:UITableViewScrollPositionBottom];
     }
     
+    if((types_2 | EnumBarcodeFormat2DOTCODE) == types_2)
+    {
+        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:12 inSection:0];
+        [barcodeTypesTableView selectRowAtIndexPath:indexPath animated:NO  scrollPosition:UITableViewScrollPositionBottom];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -144,7 +151,7 @@
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     //where indexPath.row is the selected cell
-    BOOL hasCellSelected = linearCell.selected || qrcodeCell.selected || pdf417Cell.selected || datamatrixCell.selected || aztecCell.selected || databarCell.selected || patchcodeCell.selected || maxicodeCell.selected || microqrCell.selected || micropdf417Cell.selected || gs1compositeCell.selected || postalCodeCell.selected;
+    BOOL hasCellSelected = linearCell.selected || qrcodeCell.selected || pdf417Cell.selected || datamatrixCell.selected || aztecCell.selected || databarCell.selected || patchcodeCell.selected || maxicodeCell.selected || microqrCell.selected || micropdf417Cell.selected || gs1compositeCell.selected || postalCodeCell.selected || dotCodeCell.selected;
     
     if(hasCellSelected == NO)
         [barcodeTypesTableView selectRowAtIndexPath:indexPath animated:NO  scrollPosition:UITableViewScrollPositionBottom];
@@ -188,10 +195,12 @@
             types |= EnumBarcodeFormatGS1COMPOSITE;
         if(postalCodeCell.selected)
             types_2 |= EnumBarcodeFormat2POSTALCODE;
-        long allDataBarTypeInvert = ~EnumBarcodeFormatALL;
-        long allPostalCodeInvert = ~( EnumBarcodeFormat2POSTALCODE | EnumBarcodeFormat2NONSTANDARDBARCODE);
+        if(dotCodeCell.selected)
+            types_2 |= EnumBarcodeFormat2DOTCODE;
+        long allBarcodeFormatInvert = ~EnumBarcodeFormatALL;
+        long allBarcodeFormat2Invert = ~(EnumBarcodeFormat2POSTALCODE | EnumBarcodeFormat2NONSTANDARDBARCODE | EnumBarcodeFormat2DOTCODE);
         if(mainView != nil && mainView.dbrManager != nil){
-            [mainView.dbrManager setBarcodeFormat:(mainView.dbrManager.barcodeFormat & allDataBarTypeInvert) barcodeFormat2:(mainView.dbrManager.barcodeFormat2 & allPostalCodeInvert)];
+            [mainView.dbrManager setBarcodeFormat:(mainView.dbrManager.barcodeFormat & allBarcodeFormatInvert) barcodeFormat2:(mainView.dbrManager.barcodeFormat2 & allBarcodeFormat2Invert)];
             [mainView.dbrManager setBarcodeFormat:(mainView.dbrManager.barcodeFormat | types) barcodeFormat2:(mainView.dbrManager.barcodeFormat2 | types_2)];
         }
     }

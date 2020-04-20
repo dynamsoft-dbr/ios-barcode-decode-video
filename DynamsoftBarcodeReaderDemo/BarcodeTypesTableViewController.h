@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *gs1compositeCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *micropdf417Cell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *postalCodeCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *dotCodeCell;
 
 @end
