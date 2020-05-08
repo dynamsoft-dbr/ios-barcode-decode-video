@@ -218,10 +218,19 @@
         width = (int)CVPixelBufferGetWidth(imageBuffer);
         height = (int)CVPixelBufferGetHeight(imageBuffer);
         stride = CVPixelBufferGetBytesPerRow(imageBuffer);
+//        [m_barcodeReader setDBRErrorDelegate:self userData:nil];
+//        [m_barcodeReader setDBRTextResultDelegate:self userData:nil];
+//        [m_barcodeReader setDBRIntermediateResultDelegate:self userData:nil];
+//        [m_barcodeReader startFrameDecoding:10 maxResultQueueLength:100 width:width height:height stride:stride format:EnumImagePixelFormatARGB_8888 templateName:@"" error:nil];
+        iFrameDecodingParameters* pa = [m_barcodeReader getFrameDecodingParameters:nil];
+        pa.maxQueueLength = 10;
+        pa.width = width;
+        pa.height = height;
+        pa.stride = stride;
+        pa.imagePixelFormat = EnumImagePixelFormatARGB_8888;
         [m_barcodeReader setDBRErrorDelegate:self userData:nil];
         [m_barcodeReader setDBRTextResultDelegate:self userData:nil];
-        [m_barcodeReader setDBRIntermediateResultDelegate:self userData:nil];
-        [m_barcodeReader startFrameDecoding:10 maxResultQueueLength:100 width:width height:height stride:stride format:EnumImagePixelFormatARGB_8888 templateName:@"" error:nil];
+        [m_barcodeReader startFrameDecodingEx:pa templateName:@"" error:nil];
     } else {
         [m_barcodeReader appendFrame:buffer];
     }
