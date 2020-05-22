@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1ECD017E215A040C00A915D5 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ECD017D215A040C00A915D5 /* libc++.1.tbd */; };
-		57801F7A2248CEEF00F20A30 /* DynamsoftBarcodeReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57801F792248CEEF00F20A30 /* DynamsoftBarcodeReader.framework */; };
 		57801F7F2249C07400F20A30 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57801F7E2249C07400F20A30 /* NavigationController.m */; };
 		6874ED511CF4FDE7003986EA /* DbrManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6874ED501CF4FDE7003986EA /* DbrManager.m */; };
 		6874ED571CF53600003986EA /* BarcodeTypesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6874ED561CF53600003986EA /* BarcodeTypesTableViewController.m */; };
@@ -18,6 +17,7 @@
 		6889A5581CEED25800A45114 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6889A5561CEED25800A45114 /* Main.storyboard */; };
 		6889A55A1CEED25800A45114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6889A5591CEED25800A45114 /* Assets.xcassets */; };
 		6889A55D1CEED25800A45114 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6889A55B1CEED25800A45114 /* LaunchScreen.storyboard */; };
+		988CCD671E38B214E0FA3E1D /* Pods_DynamsoftBarcodeReaderDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECDD038CD3C9507D38143BA /* Pods_DynamsoftBarcodeReaderDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		1ECD017D215A040C00A915D5 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		49E1DC9A1611381ACD5AF2F4 /* Pods-DynamsoftBarcodeReaderDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamsoftBarcodeReaderDemo.debug.xcconfig"; path = "Target Support Files/Pods-DynamsoftBarcodeReaderDemo/Pods-DynamsoftBarcodeReaderDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		57801F792248CEEF00F20A30 /* DynamsoftBarcodeReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DynamsoftBarcodeReader.framework; sourceTree = "<group>"; };
 		57801F7D2249C07400F20A30 /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		57801F7E2249C07400F20A30 /* NavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
@@ -52,6 +53,8 @@
 		6889A5591CEED25800A45114 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6889A55C1CEED25800A45114 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6889A55E1CEED25800A45114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7ECDD038CD3C9507D38143BA /* Pods_DynamsoftBarcodeReaderDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamsoftBarcodeReaderDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A107CF0856727EFD01508640 /* Pods-DynamsoftBarcodeReaderDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamsoftBarcodeReaderDemo.release.xcconfig"; path = "Target Support Files/Pods-DynamsoftBarcodeReaderDemo/Pods-DynamsoftBarcodeReaderDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,20 +62,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57801F7A2248CEEF00F20A30 /* DynamsoftBarcodeReader.framework in Frameworks */,
 				1ECD017E215A040C00A915D5 /* libc++.1.tbd in Frameworks */,
+				988CCD671E38B214E0FA3E1D /* Pods_DynamsoftBarcodeReaderDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		493790A79AB4CF6DF04B0C8F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				49E1DC9A1611381ACD5AF2F4 /* Pods-DynamsoftBarcodeReaderDemo.debug.xcconfig */,
+				A107CF0856727EFD01508640 /* Pods-DynamsoftBarcodeReaderDemo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		6889A5411CEED25700A45114 = {
 			isa = PBXGroup;
 			children = (
 				6889A54C1CEED25800A45114 /* DynamsoftBarcodeReaderDemo */,
 				6889A54B1CEED25700A45114 /* Products */,
 				68BA8B7020E20BD100A2737D /* Frameworks */,
+				493790A79AB4CF6DF04B0C8F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +133,7 @@
 			children = (
 				57801F792248CEEF00F20A30 /* DynamsoftBarcodeReader.framework */,
 				1ECD017D215A040C00A915D5 /* libc++.1.tbd */,
+				7ECDD038CD3C9507D38143BA /* Pods_DynamsoftBarcodeReaderDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -130,6 +145,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6889A5611CEED25800A45114 /* Build configuration list for PBXNativeTarget "DynamsoftBarcodeReaderDemo" */;
 			buildPhases = (
+				EFB33596DB6F4A8DF30AC5CD /* [CP] Check Pods Manifest.lock */,
 				6889A5461CEED25700A45114 /* Sources */,
 				6889A5471CEED25700A45114 /* Frameworks */,
 				6889A5481CEED25700A45114 /* Resources */,
@@ -190,6 +206,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EFB33596DB6F4A8DF30AC5CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DynamsoftBarcodeReaderDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6889A5461CEED25700A45114 /* Sources */ = {
@@ -331,6 +372,7 @@
 		};
 		6889A5621CEED25800A45114 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49E1DC9A1611381ACD5AF2F4 /* Pods-DynamsoftBarcodeReaderDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -356,6 +398,7 @@
 		};
 		6889A5631CEED25800A45114 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A107CF0856727EFD01508640 /* Pods-DynamsoftBarcodeReaderDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
