@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		1ECD017D215A040C00A915D5 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		49E1DC9A1611381ACD5AF2F4 /* Pods-DynamsoftBarcodeReaderDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamsoftBarcodeReaderDemo.debug.xcconfig"; path = "Target Support Files/Pods-DynamsoftBarcodeReaderDemo/Pods-DynamsoftBarcodeReaderDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		57801F792248CEEF00F20A30 /* DynamsoftBarcodeReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DynamsoftBarcodeReader.framework; sourceTree = "<group>"; };
 		57801F7D2249C07400F20A30 /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		57801F7E2249C07400F20A30 /* NavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		6874ED4F1CF4FDE7003986EA /* DbrManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbrManager.h; sourceTree = "<group>"; };
@@ -76,7 +75,6 @@
 				49E1DC9A1611381ACD5AF2F4 /* Pods-DynamsoftBarcodeReaderDemo.debug.xcconfig */,
 				A107CF0856727EFD01508640 /* Pods-DynamsoftBarcodeReaderDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -131,7 +129,6 @@
 		68BA8B7020E20BD100A2737D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				57801F792248CEEF00F20A30 /* DynamsoftBarcodeReader.framework */,
 				1ECD017D215A040C00A915D5 /* libc++.1.tbd */,
 				7ECDD038CD3C9507D38143BA /* Pods_DynamsoftBarcodeReaderDemo.framework */,
 			);
@@ -150,6 +147,7 @@
 				6889A5471CEED25700A45114 /* Frameworks */,
 				6889A5481CEED25700A45114 /* Resources */,
 				689AF5F91CF6DFB5008665EC /* Embed Frameworks */,
+				8D94AE5658F8B92586C29DD7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -208,6 +206,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8D94AE5658F8B92586C29DD7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DynamsoftBarcodeReaderDemo/Pods-DynamsoftBarcodeReaderDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DynamsoftBarcodeReader/DynamsoftBarcodeReader.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamsoftBarcodeReader.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DynamsoftBarcodeReaderDemo/Pods-DynamsoftBarcodeReaderDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EFB33596DB6F4A8DF30AC5CD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -379,11 +395,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = W6PESGXW9M;
 				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/DynamsoftBarcodeReaderDemo",
-					"$(PROJECT_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/DynamsoftBarcodeReader";
 				INFOPLIST_FILE = DynamsoftBarcodeReaderDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -405,11 +417,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = W6PESGXW9M;
 				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/DynamsoftBarcodeReaderDemo",
-					"$(PROJECT_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/DynamsoftBarcodeReader";
 				INFOPLIST_FILE = DynamsoftBarcodeReaderDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
