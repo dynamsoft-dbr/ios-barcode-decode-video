@@ -1,7 +1,6 @@
 
 #import "DbrManager.h"
 
-
 @implementation DbrManager
 {
     AVCaptureSession *m_videoCaptureSession;
@@ -11,10 +10,7 @@
     id m_recognitionReceiver;
     SEL m_verificationCallback;
     id m_verificationReceiver;
-    CIContext* ciContext;
     AVCaptureDevice* inputDevice;
-    int itrFocusFinish;
-    BOOL firstFocusFinish;
     int width;
     int height;
     size_t stride;
@@ -23,7 +19,6 @@
 @synthesize startRecognitionDate;
 @synthesize isPauseFramesComing;
 @synthesize isCurrentFrameDecodeFinished;
-@synthesize cameraResolution;
 
 -(void)MemberInitialize
 {
@@ -33,12 +28,9 @@
     _barcodeFormat = EnumBarcodeFormatONED | EnumBarcodeFormatPDF417 | EnumBarcodeFormatQRCODE | EnumBarcodeFormatDATAMATRIX;
     _barcodeFormat2 = EnumBarcodeFormat2NULL;
     startRecognitionDate = nil;
-    ciContext = [[CIContext alloc] init];
     m_recognitionReceiver = nil;
     _startVidioStreamDate  = [NSDate date];
     _adjustingFocus = YES;
-    itrFocusFinish = 0;
-    firstFocusFinish = false;
 }
 
 -(id)initWithLicenseFromServer:(NSString*)serverURL LicenseKey:(NSString*)licenseKey
@@ -72,6 +64,8 @@
         iPublicRuntimeSettings* settings = [m_barcodeReader getRuntimeSettings:nil];
         settings.barcodeFormatIds = EnumBarcodeFormatONED | EnumBarcodeFormatPDF417 | EnumBarcodeFormatQRCODE | EnumBarcodeFormatDATAMATRIX;
         settings.barcodeFormatIds_2 = EnumBarcodeFormat2NULL;
+        settings.deblurLevel = 0;
+        settings.expectedBarcodesCount = 32;
         [m_barcodeReader updateRuntimeSettings:settings error:nil];
         [self MemberInitialize];
     }
@@ -160,20 +154,14 @@
     if ([m_videoCaptureSession canSetSessionPreset:AVCaptureSessionPreset1920x1080])
     {
         [m_videoCaptureSession setSessionPreset :AVCaptureSessionPreset1920x1080];
-        cameraResolution.width = 1920;
-        cameraResolution.height = 1080;
     }
     else if ([m_videoCaptureSession canSetSessionPreset:AVCaptureSessionPreset1280x720])
     {
         [m_videoCaptureSession setSessionPreset :AVCaptureSessionPreset1280x720];
-        cameraResolution.width = 1280;
-        cameraResolution.height = 720;
     }
     else if([m_videoCaptureSession canSetSessionPreset:AVCaptureSessionPreset640x480])
     {
         [m_videoCaptureSession setSessionPreset :AVCaptureSessionPreset640x480];
-        cameraResolution.width = 640;
-        cameraResolution.height = 480;
     }
 }
 
@@ -218,10 +206,6 @@
         width = (int)CVPixelBufferGetWidth(imageBuffer);
         height = (int)CVPixelBufferGetHeight(imageBuffer);
         stride = CVPixelBufferGetBytesPerRow(imageBuffer);
-//        [m_barcodeReader setDBRErrorDelegate:self userData:nil];
-//        [m_barcodeReader setDBRTextResultDelegate:self userData:nil];
-//        [m_barcodeReader setDBRIntermediateResultDelegate:self userData:nil];
-//        [m_barcodeReader startFrameDecoding:10 maxResultQueueLength:100 width:width height:height stride:stride format:EnumImagePixelFormatARGB_8888 templateName:@"" error:nil];
         iFrameDecodingParameters* pa = [m_barcodeReader getFrameDecodingParameters:nil];
         pa.maxQueueLength = 10;
         pa.width = width;
@@ -268,14 +252,11 @@
 
 - (void)intermediateResultCallback:(NSInteger)frameId results:(NSArray<iIntermediateResult*>*)results userData: (NSObject*)userData
 {
-    
+    //printf("frameId %ld", (long)frameId);
 }
 
 - (void)textResultCallback:(NSInteger)frameId results:(NSArray<iTextResult*>*)results userData: (NSObject*)userData {
     if (results.count > 0) {
-        /*dispatch_async(dispatch_get_main_queue(), ^{
-            [self->m_recognitionReceiver performSelector:self->m_recognitionCallback withObject:results];
-        });*/
         dispatch_async(dispatch_get_main_queue(), ^{
             [self->m_recognitionReceiver performSelector:self->m_recognitionCallback withObject:results];
         });

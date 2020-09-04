@@ -18,8 +18,6 @@
 @property BOOL isCurrentFrameDecodeFinished;
 @property BOOL adjustingFocus;
 
-@property CGSize cameraResolution;
-
 -(id)initWithLicenseFromServer:(NSString*)serverURL LicenseKey:(NSString*)licenseKey;
 
 -(void)connectServerAfterInit:(NSString*)serverURL LicenseKey:(NSString*)licenseKey;
