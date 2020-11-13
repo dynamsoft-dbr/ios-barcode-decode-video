@@ -15,7 +15,6 @@ pod 'DynamsoftBarcodeReader'
 3.Make sure `Your Project Target -> Build Settings -> Search Paths -> Frameworks Search Paths`, this can lead to problems with the CocoaPods installation, The following command is modified to the corresponding content please.
 ```bash
 Frameworks Search Paths = "${PODS_ROOT}/DynamsoftBarcodeReader"
-Other Linker Flags = -framework "DynamsoftBarcodeReader"
 ```
 
 ## License Agreement
