@@ -1,4 +1,4 @@
-# ios-barcode-decode-video
+# ios-barcode-decode-video 8.0
 
 Call startFrameDecodingEx() to initialize the environment and call appendFrame() repeatedly to add the preview images.
 
@@ -12,10 +12,9 @@ pod 'DynamsoftBarcodeReader'
 
 2.Then run `pod install` from the Example directory.
 
-3.Make sure `Your Project Target -> Build Settings -> Search Paths -> Frameworks Search Paths` and `Linking -> Other Linker Flags`, this can lead to problems with the CocoaPods installation, The following command is modified to the corresponding content please.
+3.Make sure `Your Project Target -> Build Settings -> Search Paths -> Frameworks Search Paths`, this can lead to problems with the CocoaPods installation, The following command is modified to the corresponding content please.
 ```bash
 Frameworks Search Paths = "${PODS_ROOT}/DynamsoftBarcodeReader"
-Other Linker Flags = -framework "DynamsoftBarcodeReader"
 ```
 
 ## License Agreement
