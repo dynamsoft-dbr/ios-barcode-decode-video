@@ -18,4 +18,4 @@ Frameworks Search Paths = "${PODS_ROOT}/DynamsoftBarcodeReader"
 ```
 
 ## License Agreement
-https://www.dynamsoft.com/Products/barcode-reader-license-agreement.aspx#javascript
+https://www.dynamsoft.com/Products/barcode-reader-license-agreement.aspx
